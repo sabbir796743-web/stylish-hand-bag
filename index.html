@@ -61,23 +61,23 @@
     <section class="py-10 md:py-16 px-4 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
-            <!-- Product Gallery Showcase with Real Images -->
+            <!-- Product Showcase -->
             <div class="space-y-4">
                 <div class="relative overflow-hidden rounded-3xl bg-white p-3 border border-bordercolor product-shadow">
                     <span class="absolute top-6 left-6 z-10 bg-accent text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">
                         Special Offer
                     </span>
-                    <img id="main-product-img" src="https://i.ibb.co/2st0R9h/bag1-real.jpg" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80'" alt="Si Unique Handbag" class="w-full h-[380px] sm:h-[480px] object-cover rounded-2xl transition-all duration-300">
+                    <img id="main-product-img" src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=1000&q=80" alt="Si Unique Handbag" class="w-full h-[380px] sm:h-[480px] object-cover rounded-2xl transition-all duration-300">
                 </div>
                 
-                <!-- Thumbnails representing the actual uploaded bag variants -->
+                <!-- Thumbnails / Variants -->
                 <div class="grid grid-cols-2 gap-3">
-                    <button onclick="selectProductVariant('Brown Flower Pattern', 'https://i.ibb.co/2st0R9h/bag1-real.jpg')" class="border-2 border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left">
-                        <img src="https://i.ibb.co/2st0R9h/bag1-real.jpg" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=300&q=80'" class="h-24 w-full object-cover rounded-lg">
+                    <button type="button" onclick="selectProductVariant('Brown Flower Pattern', 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80')" class="border-2 border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left">
+                        <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=400&q=80" class="h-24 w-full object-cover rounded-lg">
                         <p class="text-xs font-bold text-center mt-1.5 text-primary">Brown Flower Design</p>
                     </button>
-                    <button onclick="selectProductVariant('Golden Monogram Design', 'https://i.ibb.co/1n5b67K/bag2-real.jpg')" class="border border-bordercolor hover:border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left">
-                        <img src="https://i.ibb.co/1n5b67K/bag2-real.jpg" onerror="this.src='https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=300&q=80'" class="h-24 w-full object-cover rounded-lg">
+                    <button type="button" onclick="selectProductVariant('Golden Monogram Design', 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80')" class="border border-bordercolor hover:border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=400&q=80" class="h-24 w-full object-cover rounded-lg">
                         <p class="text-xs font-bold text-center mt-1.5 text-primary">Golden Monogram</p>
                     </button>
                 </div>
@@ -90,7 +90,7 @@
                 </div>
                 
                 <h1 class="hero-title text-3xl sm:text-5xl font-bold text-primary leading-tight">
-                    সি ইউনিক প্রিমিয়াম লেদার শোল্ডার ব্যাগ
+                    সি ইউনিক প্রিমিয়াম লেদার শোল্ডার ব্যাগ
                 </h1>
                 
                 <!-- PRICE DISPLAY (999 -> 690) -->
@@ -101,17 +101,17 @@
                 </div>
 
                 <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
-                    আপনার দৈনন্দিন স্টাইল এবং আভিজাত্য বাড়াতে প্রিমিয়াম কোয়ালিটির এই হ্যান্ডব্যাগটি অনন্য। সুন্দর গোল্ডেন চেইন স্ট্র্যাপ ও প্রিমিয়াম ফিনিশিং সহ লং-লাস্টিং ডিউরেবিলিটি নিশ্চিত করে।
+                    আপনার দৈনন্দিন স্টাইল এবং আভিজাত্য বাড়াতে প্রিমিয়াম কোয়ালিটির এই হ্যান্ডব্যাগটি অনন্য। সুন্দর গোল্ডেন চেইন স্ট্র্যাপ ও প্রিমিয়াম ফিনিশিং সহ লং-লাস্টিং ডিউরেবিলিটি নিশ্চিত করে।
                 </p>
 
                 <!-- Color / Variant Selection Buttons -->
                 <div class="space-y-2">
                     <label class="block text-sm font-bold text-primary">কালার ও ডিজাইন সিলেক্ট করুন:</label>
                     <div class="grid grid-cols-2 gap-3">
-                        <button type="button" id="btn-var-1" onclick="selectProductVariant('Brown Flower Pattern', 'https://i.ibb.co/2st0R9h/bag1-real.jpg')" class="p-3 bg-white border-2 border-accent rounded-xl text-xs sm:text-sm font-bold text-primary shadow-sm transition text-center">
+                        <button type="button" id="btn-var-1" onclick="selectProductVariant('Brown Flower Pattern', 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80')" class="p-3 bg-white border-2 border-accent rounded-xl text-xs sm:text-sm font-bold text-primary shadow-sm transition text-center">
                             <i class="fas fa-check-circle text-accent mr-1"></i> Brown Flower
                         </button>
-                        <button type="button" id="btn-var-2" onclick="selectProductVariant('Golden Monogram Design', 'https://i.ibb.co/1n5b67K/bag2-real.jpg')" class="p-3 bg-white border border-bordercolor rounded-xl text-xs sm:text-sm font-bold text-gray-700 hover:border-accent transition text-center">
+                        <button type="button" id="btn-var-2" onclick="selectProductVariant('Golden Monogram Design', 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80')" class="p-3 bg-white border border-bordercolor rounded-xl text-xs sm:text-sm font-bold text-gray-700 hover:border-accent transition text-center">
                             Golden Monogram
                         </button>
                     </div>
@@ -122,9 +122,9 @@
                     <label class="block text-sm font-bold text-primary">পরিমাণ (Quantity):</label>
                     <div class="flex items-center gap-4">
                         <div class="flex items-center border border-bordercolor rounded-xl bg-white p-1 shadow-sm">
-                            <button onclick="decreaseQty()" class="w-10 h-10 rounded-lg bg-softGray hover:bg-bordercolor text-primary font-bold text-lg transition flex items-center justify-center">-</button>
+                            <button type="button" onclick="decreaseQty()" class="w-10 h-10 rounded-lg bg-softGray hover:bg-bordercolor text-primary font-bold text-lg transition flex items-center justify-center">-</button>
                             <span id="qty-count" class="w-12 text-center font-bold text-lg text-primary">1</span>
-                            <button onclick="increaseQty()" class="w-10 h-10 rounded-lg bg-softGray hover:bg-bordercolor text-primary font-bold text-lg transition flex items-center justify-center">+</button>
+                            <button type="button" onclick="increaseQty()" class="w-10 h-10 rounded-lg bg-softGray hover:bg-bordercolor text-primary font-bold text-lg transition flex items-center justify-center">+</button>
                         </div>
                         <span class="text-sm font-medium text-gray-600">সাবটোটাল: <strong id="subtotal-display" class="text-primary text-lg">৳৬৯০</strong></span>
                     </div>
@@ -174,4 +174,129 @@
                             <label class="block text-sm font-semibold text-gray-700 mb-2">জেলা / City সিলেক্ট করুন *</label>
                             <select id="cust-city" required onchange="updateCalculations()" class="w-full px-4 py-3 rounded-xl border border-bordercolor focus:outline-none focus:ring-2 focus:ring-accent bg-white">
                                 <option value="">আপনার জেলা সিলেক্ট করুন</option>
-                                <option value="Dhaka">Dhaka (ঢাকার মধ্যে - ৳৭০)</option
+                                <option value="Dhaka">Dhaka (ঢাকার মধ্যে - ৳৭০)</option>
+                                <option value="Outside Dhaka">Dhaka-r Bahire (ঢাকার বাইরে - ৳১৩০)</option>
+                                <option value="Bagerhat">Bagerhat (বাগেরহাট - ৳১৩০)</option>
+                                <option value="Bandarban">Bandarban (বান্দরবান - ৳১৩০)</option>
+                                <option value="Barguna">Barguna (বরগুনা - ৳১৩০)</option>
+                                <option value="Barishal">Barishal (বরিশাল - ৳১৩০)</option>
+                                <option value="Bhola">Bhola (ভোলা - ৳১৩০)</option>
+                                <option value="Bogra">Bogra (বগুড়া - ৳১৩০)</option>
+                                <option value="Brahmanbaria">Brahmanbaria (ব্রাহ্মণবাড়িয়া - ৳১৩০)</option>
+                                <option value="Chandpur">Chandpur (চাঁদপুর - ৳১৩০)</option>
+                                <option value="Chattogram">Chattogram (চট্টগ্রাম - ৳১৩০)</option>
+                                <option value="Chuadanga">Chuadanga (চুয়াডাঙ্গা - ৳১৩০)</option>
+                                <option value="Cumilla">Cumilla (কুমিল্লা - ৳১৩০)</option>
+                                <option value="Coxs Bazar">Cox's Bazar (কক্সবাজার - ৳১৩০)</option>
+                                <option value="Dinajpur">Dinajpur (দিনাজপুর - ৳১৩০)</option>
+                                <option value="Faridpur">Faridpur (ফরিদপুর - ৳১৩০)</option>
+                                <option value="Feni">Feni (ফেনী - ৳১৩০)</option>
+                                <option value="Gaibandha">Gaibandha (গাইবান্ধা - ৳১৩০)</option>
+                                <option value="Gazipur">Gazipur (গাজীপুর - ৳১৩০)</option>
+                                <option value="Gopalganj">Gopalganj (গোপালগঞ্জ - ৳১৩০)</option>
+                                <option value="Habiganj">Habiganj (হবিগঞ্জ - ৳১৩০)</option>
+                                <option value="Jamalpur">Jamalpur (জামালপুর - ৳১৩০)</option>
+                                <option value="Jashore">Jashore (যশোর - ৳১৩০)</option>
+                                <option value="Jhalokati">Jhalokati (ঝালকাঠি - ৳১৩০)</option>
+                                <option value="Jhenaidah">Jhenaidah (ঝিনাইদহ - ৳১৩০)</option>
+                                <option value="Joypurhat">Joypurhat (জয়পুরহাট - ৳১৩০)</option>
+                                <option value="Khagrachhari">Khagrachhari (খাগড়াছড়ি - ৳১৩০)</option>
+                                <option value="Khulna">Khulna (খুলনা - ৳১৩০)</option>
+                                <option value="Kishoreganj">Kishoreganj (কিশোরগঞ্জ - ৳১৩০)</option>
+                                <option value="Kurigram">Kurigram (কুড়িগ্রাম - ৳১৩০)</option>
+                                <option value="Kushtia">Kushtia (কুষ্টিয়া - ৳১৩০)</option>
+                                <option value="Lakshmipur">Lakshmipur (লক্ষ্মীপুর - ৳১৩০)</option>
+                                <option value="Lalmonirhat">Lalmonirhat (লালমনিরহাট - ৳১৩০)</option>
+                                <option value="Madaripur">Madaripur (মাদারীপুর - ৳১৩০)</option>
+                                <option value="Magura">Magura (মাগুরা - ৳১৩০)</option>
+                                <option value="Manikganj">Manikganj (মানিকগঞ্জ - ৳১৩০)</option>
+                                <option value="Meherpur">Meherpur (মেহেরপুর - ৳১৩০)</option>
+                                <option value="Moulvibazar">Moulvibazar (মৌলভীবাজার - ৳১৩০)</option>
+                                <option value="Munshiganj">Munshiganj (মুন্সীগঞ্জ - ৳১৩০)</option>
+                                <option value="Mymensingh">Mymensingh (ময়মনসিংহ - ৳১৩০)</option>
+                                <option value="Naogaon">Naogaon (নওগাঁ - ৳১৩০)</option>
+                                <option value="Narail">Narail (নড়াইল - ৳১৩০)</option>
+                                <option value="Narayanganj">Narayanganj (নারায়ণগঞ্জ - ৳১৩০)</option>
+                                <option value="Narsingdi">Narsingdi (নরসিংদী - ৳১৩০)</option>
+                                <option value="Natore">Natore (নাটোর - ৳১৩০)</option>
+                                <option value="Nawabganj">Nawabganj (নবাবগঞ্জ - ৳১৩০)</option>
+                                <option value="Netrokona">Netrokona (নেত্রকোণা - ৳১৩০)</option>
+                                <option value="Nilphamari">Nilphamari (নীলফামারী - ৳১৩০)</option>
+                                <option value="Noakhali">Noakhali (নোয়াখালী - ৳১৩০)</option>
+                                <option value="Pabna">Pabna (পাবনা - ৳১৩০)</option>
+                                <option value="Panchagarh">Panchagarh (পঞ্চগড় - ৳১৩০)</option>
+                                <option value="Patuakhali">Patuakhali (পটুয়াখালী - ৳১৩০)</option>
+                                <option value="Pirojpur">Pirojpur (পিরোজপুর - ৳১৩০)</option>
+                                <option value="Rajbari">Rajbari (রাজবাড়ী - ৳১৩০)</option>
+                                <option value="Rajshahi">Rajshahi (রাজশাহী - ৳১৩০)</option>
+                                <option value="Rangamati">Rangamati (রাঙ্গামাটি - ৳১৩০)</option>
+                                <option value="Rangpur">Rangpur (রংপুর - ৳১৩০)</option>
+                                <option value="Satkhira">Satkhira (সাতক্ষীরা - ৳১৩০)</option>
+                                <option value="Shariatpur">Shariatpur (শরীয়তপুর - ৳১৩০)</option>
+                                <option value="Sherpur">Sherpur (শেরপুর - ৳১৩০)</option>
+                                <option value="Sirajganj">Sirajganj (সিরাজগঞ্জ - ৳১৩০)</option>
+                                <option value="Sunamganj">Sunamganj (সুনামগঞ্জ - ৳১৩০)</option>
+                                <option value="Sylhet">Sylhet (সিলেট - ৳১৩০)</option>
+                                <option value="Tangail">Tangail (টাঙ্গাইল - ৳১৩০)</option>
+                                <option value="Thakurgaon">Thakurgaon (ঠাকুরগাঁও - ৳১৩০)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">পূর্ণাঙ্গ ঠিকানা (উপজেলা/থানা সহ) *</label>
+                            <input type="text" id="cust-address" required placeholder="বাসা নম্বর, রোড, এলাকা, থানা" class="w-full px-4 py-3 rounded-xl border border-bordercolor focus:outline-none focus:ring-2 focus:ring-accent bg-white">
+                        </div>
+                    </div>
+
+                    <!-- Order Summary Box -->
+                    <div class="bg-white p-6 rounded-2xl border border-bordercolor space-y-3 shadow-sm">
+                        <h3 class="font-bold text-lg text-primary border-b pb-2">অর্ডার সামারি</h3>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-600">বাছাইকৃত ব্যাগ:</span>
+                            <span id="summary-variant" class="font-semibold text-primary">Brown Flower Pattern</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-600">পণ্যের দাম (<span id="summary-qty">1</span>টি):</span>
+                            <span class="font-semibold text-gray-800" id="summary-product-total">৳৬৯০</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-600">ডেলিভারি চার্জ:</span>
+                            <span id="delivery-charge-display" class="font-bold text-accent">৳০ (জেলা সিলেক্ট করুন)</span>
+                        </div>
+                        <div class="flex justify-between text-base font-bold text-primary border-t pt-2">
+                            <span>সর্বমোট:</span>
+                            <span id="total-price-display" class="text-xl text-primary">৳৬৯০</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-primary hover:bg-accent text-white font-bold py-4 rounded-xl shadow-lg transition duration-200 text-lg flex items-center justify-center gap-2">
+                        <i class="fas fa-check-circle"></i> অর্ডার কনফার্ম করুন (৳<span id="btn-total">৬৯০</span>)
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/88019767413?text=Hi%20Si%20Unique!%20I%20want%20to%20order%20handbag." target="_blank" class="fixed bottom-20 md:bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Mobile Bottom Fixed Quick Order Bar -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-bordercolor p-3 z-40 md:hidden flex gap-3 shadow-lg">
+        <a href="https://wa.me/88019767413" target="_blank" class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center font-bold">
+            <i class="fab fa-whatsapp text-xl"></i>
+        </a>
+        <a href="#order-section" class="flex-1 bg-primary text-white text-center py-3 rounded-xl font-bold flex items-center justify-center gap-2">
+            অর্ডার করুন
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-10 px-4">
+        <div class="max-w-7xl mx-auto text-center space-y-4">
+            <h3 class="hero-title text-2xl font-bold tracking-wider">SI UNIQUE</h3>
+            <p class="text-xs text-gray-400">প্রিমিয়াম কোয়ালিটি লেদার ব্যাকপ্যাক এবং হ্যান্ডব্যাগ।</p>
+            <div class="flex justify-center gap-6 pt-2">
+                <a href="https://www.facebook.com/siunique12" target="_blank" class="text-gray-300 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/88019767413" target="_blank" class="text-gray-300 hover:text-
