@@ -70,17 +70,21 @@
                     <img id="main-product-img" src="main-product-img.jpg" alt="Si Unique Handbag" class="w-full h-[380px] sm:h-[480px] object-cover rounded-2xl transition-all duration-300">
                 </div>
                 
-                <!-- Thumbnails / Variants -->
-<div class="grid grid-cols-2 gap-3">
-    <button type="button" onclick="selectProductVariant('Brown Flower Pattern', '...')">
-        ...
+<!-- Thumbnails / Variants -->
+<div class="grid grid-cols-3 gap-3">
+    <button type="button" onclick="selectProductVariant('Black Edition', 'bag-black.jpg.jpeg')" class="border-2 border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
+        <img src="bag-black.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
+        <p class="text-xs font-bold text-center mt-1.5 text-primary">Black Edition</p>
     </button>
-    <button type="button" onclick="selectProductVariant('Golden Monogram Design', '...')">
-        ...
+    <button type="button" onclick="selectProductVariant('Brown Edition', 'bag-brown.jpg.jpeg')" class="border border-bordercolor hover:border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
+        <img src="bag-brown.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
+        <p class="text-xs font-bold text-center mt-1.5 text-primary">Brown Edition</p>
+    </button>
+    <button type="button" onclick="selectProductVariant('Golden Edition', 'bag-golden.jpg.jpeg')" class="border border-bordercolor hover:border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
+        <img src="bag-golden.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
+        <p class="text-xs font-bold text-center mt-1.5 text-primary">Golden Edition</p>
     </button>
 </div>
-    <button type="button" onclick="selectProductVariant('Black Edition', 'main-product-img.jpg')" class="border-2 border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
-        <img src="main-product-img.jpg" class="h-24 w-full object-cover rounded-lg">
         <p class="text-xs font-bold text-center mt-1.5 text-primary">Black Edition</p>
     </button>
     <button type="button" onclick="selectProductVariant('Black Premium', 'main-product-img.jpg')" class="border border-bordercolor hover:border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
