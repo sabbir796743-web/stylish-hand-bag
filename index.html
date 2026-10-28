@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Si Unique - Premium Handbags</title>
-    <!-- Google Fonts & Tailwind CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -27,7 +26,6 @@
             }
         }
     </script>
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
@@ -49,7 +47,6 @@
 </head>
 <body class="pb-20 md:pb-0">
 
-    <!-- Header Navigation -->
     <header class="sticky top-0 z-40 glass-nav border-b border-bordercolor transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-2">
@@ -67,36 +64,33 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="py-10 md:py-16 px-4 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
-            <div class="grid grid-cols-3 gap-3">
-    <button type="button" onclick="selectProductVariant('Black Edition', 'bag-black.jpg.jpeg')" class="border-2 border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
-        <img src="bag-black.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
-        <p class="text-xs font-bold text-center mt-1.5 text-primary">Black Edition</p>
-    </button>
-    <button type="button" onclick="selectProductVariant('Brown Edition', 'bag-brown.jpg.jpeg')" class="border border-bordercolor hover:border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
-        <img src="bag-brown.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
-        <p class="text-xs font-bold text-center mt-1.5 text-primary">Brown Edition</p>
-    </button>
-    <button type="button" onclick="selectProductVariant('Golden Edition', 'bag-golden.jpg.jpeg')" class="border border-bordercolor hover:border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
-        <img src="bag-golden.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
-        <p class="text-xs font-bold text-center mt-1.5 text-primary">Golden Edition</p>
-    </button>
-</div>
-                    <button type="button" id="thumb-2" onclick="selectProductVariant('Brown Edition', 'bag-brown.jpg.jpeg')" class="border border-bordercolor hover:border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
+            <div class="space-y-4">
+                <div class="relative overflow-hidden rounded-3xl bg-white p-3 border border-bordercolor product-shadow">
+                    <span class="absolute top-6 left-6 z-10 bg-accent text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">
+                        Special Offer
+                    </span>
+                    <img id="main-product-img" src="bag-black.jpg.jpeg" alt="Si Unique Handbag" class="w-full h-[380px] sm:h-[480px] object-cover rounded-2xl transition-all duration-300">
+                </div>
+
+                <div class="grid grid-cols-3 gap-3">
+                    <button type="button" onclick="selectProductVariant('Black Edition', 'bag-black.jpg.jpeg')" class="border-2 border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
+                        <img src="bag-black.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
+                        <p class="text-xs font-bold text-center mt-1.5 text-primary">Black Edition</p>
+                    </button>
+                    <button type="button" onclick="selectProductVariant('Brown Edition', 'bag-brown.jpg.jpeg')" class="border border-bordercolor hover:border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
                         <img src="bag-brown.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
                         <p class="text-xs font-bold text-center mt-1.5 text-primary">Brown Edition</p>
                     </button>
-                    <button type="button" id="thumb-3" onclick="selectProductVariant('Golden Edition', 'bag-golden.jpg.jpeg')" class="border border-bordercolor hover:border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
+                    <button type="button" onclick="selectProductVariant('Golden Edition', 'bag-golden.jpg.jpeg')" class="border border-bordercolor hover:border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
                         <img src="bag-golden.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
                         <p class="text-xs font-bold text-center mt-1.5 text-primary">Golden Edition</p>
                     </button>
                 </div>
             </div>
 
-            <!-- Product Details -->
             <div class="space-y-6">
                 <div class="inline-flex items-center gap-2 bg-softGray px-3 py-1.5 rounded-full border border-bordercolor text-xs font-semibold text-gray-700">
                     <i class="fas fa-star text-accent"></i> ৪.৯ (২০০+ কাস্টমার রিভিউ)
@@ -106,7 +100,6 @@
                     সি ইউনিক প্রিমিয়াম লেদার শোল্ডার ব্যাগ
                 </h1>
 
-                <!-- PRICE DISPLAY -->
                 <div class="flex items-baseline gap-4 bg-white p-4 rounded-2xl border border-bordercolor inline-block shadow-sm">
                     <span class="text-3xl sm:text-4xl font-extrabold text-primary">৳৬৯০</span>
                     <span class="text-xl text-gray-400 line-through">৳৯৯৯</span>
@@ -117,7 +110,6 @@
                     আপনার দৈনন্দিন স্টাইল এবং আভিজাত্য বাড়াতে প্রিমিয়াম কোয়ালিটির এই হ্যান্ডব্যাগটি অনন্য। সুন্দর গোল্ডেন চেইন স্ট্র্যাপ ও প্রিমিয়াম ফিনিশিং সহ লং-লাস্টিং ডিউরেবিলিটি নিশ্চিত করে।
                 </p>
 
-                <!-- Color / Variant Selection Buttons -->
                 <div class="space-y-2">
                     <label class="block text-sm font-bold text-primary">কালার ও ডিজাইন সিলেক্ট করুন:</label>
                     <div class="grid grid-cols-3 gap-3">
@@ -133,7 +125,6 @@
                     </div>
                 </div>
 
-                <!-- Quantity Selector -->
                 <div class="space-y-2 pt-1">
                     <label class="block text-sm font-bold text-primary">পরিমাণ (Quantity):</label>
                     <div class="flex items-center gap-4">
@@ -146,7 +137,6 @@
                     </div>
                 </div>
 
-                <!-- Action Buttons: Order Now & Add to Cart -->
                 <div class="pt-2 flex flex-col sm:flex-row gap-3">
                     <a href="#order-section" class="flex-1 bg-primary text-white text-center py-4 rounded-xl font-bold hover:bg-accent transition shadow-lg flex items-center justify-center gap-2 text-base">
                         <i class="fas fa-shopping-bag"></i> এখনই অর্ডার করুন
@@ -160,7 +150,6 @@
         </div>
     </section>
 
-    <!-- Order Form Section -->
     <section id="order-section" class="py-16 px-4 bg-white border-t border-b border-bordercolor">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-10">
@@ -171,7 +160,6 @@
             <div class="bg-offwhite p-6 sm:p-10 rounded-3xl border border-bordercolor shadow-sm">
                 <form id="checkout-form" onsubmit="handleOrderSubmit(event)" class="space-y-6">
                     
-                    <!-- Customer Information -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-semibold text-gray-700 mb-2">আপনার পুরো নাম *</label>
@@ -184,7 +172,6 @@
                         </div>
                     </div>
 
-                    <!-- City Selection with Auto Delivery Charge -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-semibold text-gray-700 mb-2">জেলা / City সিলেক্ট করুন *</label>
@@ -263,7 +250,6 @@
                         </div>
                     </div>
 
-                    <!-- Order Summary Box -->
                     <div class="bg-white p-6 rounded-2xl border border-bordercolor space-y-3 shadow-sm">
                         <h3 class="font-bold text-lg text-primary border-b pb-2">অর্ডার সামারি</h3>
                         <div class="flex justify-between text-sm">
@@ -293,12 +279,10 @@
         </div>
     </section>
 
-    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/88019767413?text=Hi%20Si%20Unique!%20I%20want%20to%20order%20handbag." target="_blank" class="fixed bottom-20 md:bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
-    <!-- Mobile Bottom Fixed Quick Order Bar -->
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-bordercolor p-3 z-40 md:hidden flex gap-3 shadow-lg">
         <a href="https://wa.me/88019767413" target="_blank" class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center font-bold">
             <i class="fab fa-whatsapp text-xl"></i>
@@ -308,7 +292,6 @@
         </a>
     </div>
 
-    <!-- Footer -->
     <footer class="bg-primary text-white py-10 px-4">
         <div class="max-w-7xl mx-auto text-center space-y-4">
             <h3 class="hero-title text-2xl font-bold tracking-wider">SI UNIQUE</h3>
@@ -321,7 +304,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript Logic -->
     <script>
         const unitPrice = 690;
         let quantity = 1;
@@ -340,9 +322,9 @@
             const activeClass = "p-3 bg-white border-2 border-accent rounded-xl text-xs sm:text-sm font-bold text-primary shadow-sm transition text-center flex flex-col items-center gap-1";
             const inactiveClass = "p-3 bg-white border border-bordercolor rounded-xl text-xs sm:text-sm font-bold text-gray-700 hover:border-accent transition text-center flex flex-col items-center gap-1";
 
-            btn1.className = variantName === 'Black Edition' ? activeClass : inactiveClass;
-            btn2.className = variantName === 'Brown Edition' ? activeClass : inactiveClass;
-            btn3.className = variantName === 'Golden Edition' ? activeClass : inactiveClass;
+            if(btn1) btn1.className = variantName === 'Black Edition' ? activeClass : inactiveClass;
+            if(btn2) btn2.className = variantName === 'Brown Edition' ? activeClass : inactiveClass;
+            if(btn3) btn3.className = variantName === 'Golden Edition' ? activeClass : inactiveClass;
         }
 
         function increaseQty() {
