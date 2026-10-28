@@ -101,9 +101,9 @@
                     <i class="fab fa-facebook font-bold text-base"></i>
                     <span class="hidden sm:inline">Facebook</span>
                 </a>
-                <!-- Cart Icon & Badge in Header -->
+                <!-- Cart Icon & Badge in Header (Original Cart Icon Restored) -->
                 <div id="cart-icon-btn" onclick="openCartDrawer()" class="relative cursor-pointer bg-white border border-bordercolor p-2.5 sm:px-4 sm:py-2.5 rounded-full hover:border-accent transition flex items-center justify-center gap-2 shadow-sm">
-                    <i class="fas fa-shopping-bag text-primary text-base"></i>
+                    <i class="fas fa-shopping-cart text-primary text-base"></i>
                     <span class="hidden sm:inline text-xs font-bold text-primary">কার্ট</span>
                     <span id="cart-badge" class="absolute -top-1 -right-1 bg-accent text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
                 </div>
@@ -189,7 +189,7 @@
                         <i class="fas fa-bolt text-accent"></i> এখনই অর্ডার করুন
                     </a>
                     <button type="button" onclick="addToCartAction()" class="bg-white border-2 border-accent text-accent hover:bg-accent hover:text-white px-6 py-4 rounded-2xl font-bold transition flex items-center justify-center gap-2 shadow-sm text-base">
-                        <i class="fas fa-cart-plus"></i> কার্টে যোগ করুন
+                        <i class="fas fa-shopping-cart"></i> কার্টে যোগ করুন
                     </button>
                 </div>
 
@@ -336,7 +336,7 @@
         <div class="bg-white w-full max-w-md rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5 border border-bordercolor">
             <div class="flex items-center justify-between border-b pb-4">
                 <h3 class="font-bold text-xl text-primary flex items-center gap-2">
-                    <i class="fas fa-shopping-bag text-accent"></i> আপনার শপিং কার্ট
+                    <i class="fas fa-shopping-cart text-accent"></i> আপনার শপিং কার্ট
                 </h3>
                 <button type="button" onclick="closeCartModal()" class="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center font-bold text-gray-600 transition">
                     <i class="fas fa-times"></i>
@@ -362,9 +362,9 @@
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
-    <!-- Floating Add to Cart Button (WhatsApp er upore thakbe) -->
+    <!-- Floating Add to Cart Button with Cart Icon (WhatsApp er upore thakbe) -->
     <button type="button" onclick="openCartDrawer()" class="fixed bottom-21 right-4 md:bottom-23 md:right-6 z-50 bg-accent hover:bg-accentHover text-white w-13 h-13 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 cursor-pointer">
-        <i class="fas fa-cart-plus text-xl md:text-2xl"></i>
+        <i class="fas fa-shopping-cart text-xl md:text-2xl"></i>
         <span id="floating-cart-badge" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden border-2 border-white">0</span>
     </button>
 
