@@ -71,21 +71,20 @@
     <section class="py-10 md:py-16 px-4 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
-            <!-- Product Showcase with Robust Image Handling -->
-            <div class="space-y-4">
-                <div class="relative overflow-hidden rounded-3xl bg-white p-3 border border-bordercolor product-shadow">
-                    <span class="absolute top-6 left-6 z-10 bg-accent text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">
-                        Special Offer
-                    </span>
-                    <img id="main-product-img" src="bag-black.jpg.jpeg" alt="Si Unique Handbag" class="w-full h-[380px] sm:h-[480px] object-cover rounded-2xl transition-all duration-300">
-                </div>
-
-                <!-- Thumbnails / Variants -->
-                <div class="grid grid-cols-3 gap-3">
-                    <button type="button" id="thumb-1" onclick="selectProductVariant('Black Edition', 'bag-black.jpg.jpeg')" class="border-2 border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
-                        <img src="bag-black.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
-                        <p class="text-xs font-bold text-center mt-1.5 text-primary">Black Edition</p>
-                    </button>
+            <div class="grid grid-cols-3 gap-3">
+    <button type="button" onclick="selectProductVariant('Black Edition', 'bag-black.jpg.jpeg')" class="border-2 border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
+        <img src="bag-black.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
+        <p class="text-xs font-bold text-center mt-1.5 text-primary">Black Edition</p>
+    </button>
+    <button type="button" onclick="selectProductVariant('Brown Edition', 'bag-brown.jpg.jpeg')" class="border border-bordercolor hover:border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
+        <img src="bag-brown.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
+        <p class="text-xs font-bold text-center mt-1.5 text-primary">Brown Edition</p>
+    </button>
+    <button type="button" onclick="selectProductVariant('Golden Edition', 'bag-golden.jpg.jpeg')" class="border border-bordercolor hover:border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
+        <img src="bag-golden.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
+        <p class="text-xs font-bold text-center mt-1.5 text-primary">Golden Edition</p>
+    </button>
+</div>
                     <button type="button" id="thumb-2" onclick="selectProductVariant('Brown Edition', 'bag-brown.jpg.jpeg')" class="border border-bordercolor hover:border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
                         <img src="bag-brown.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
                         <p class="text-xs font-bold text-center mt-1.5 text-primary">Brown Edition</p>
