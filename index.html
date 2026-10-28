@@ -40,13 +40,8 @@
         .hero-title {
             font-family: 'Playfair Display', serif;
         }
-        .glass-nav {
-            background: rgba(251, 249, 246, 0.85);
-            backdrop-filter: blur(12px);
-       .glass-nav {
-            background: rgba(245, 239, 230, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid #E3D5C6;
+        .product-shadow {
+            box-shadow: 0 25px 50px -12px rgba(197, 160, 89, 0.15);
         }
         
         /* Active Variant Styling */
@@ -91,8 +86,8 @@
 </head>
 <body class="pb-28 md:pb-24">
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-40 glass-nav border-b border-bordercolor transition-all">
+    <!-- Header Navigation with Direct Inline Soft Brown Background -->
+    <header class="sticky top-0 z-40 transition-all border-b border-[#E3D5C6]" style="background: rgba(245, 239, 230, 0.95); backdrop-filter: blur(12px);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-2">
                 <span class="hero-title text-2xl md:text-3xl font-bold tracking-widest text-primary">SI UNIQUE</span>
@@ -358,15 +353,15 @@
         </div>
     </div>
 
-    <!-- Floating WhatsApp Button & Add to Cart Button Container (Ensures proper stacking above WhatsApp) -->
+    <!-- Floating Buttons Container (WhatsApp & Cart nicely aligned) -->
     <div class="fixed bottom-6 right-4 md:bottom-6 md:right-6 z-50 flex flex-col gap-3 items-center">
-        <!-- Floating Add to Cart Button (WhatsApp er thik opore fixed thakbe) -->
+        <!-- Floating Add to Cart Button -->
         <button type="button" onclick="openCartDrawer()" class="bg-accent hover:bg-accentHover text-white w-13 h-13 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 cursor-pointer relative">
             <i class="fas fa-shopping-cart text-xl md:text-2xl"></i>
             <span id="floating-cart-badge" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden border-2 border-white">0</span>
         </button>
 
-        <!-- Floating WhatsApp Button (01410796743) -->
+        <!-- Floating WhatsApp Button -->
         <a href="https://wa.me/8801410796743?text=Hi%20Si%20Unique!%20I%20want%20to%20order%20handbag." target="_blank" class="bg-[#25D366] hover:bg-[#20ba5a] text-white w-13 h-13 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
             <i class="fab fa-whatsapp text-3xl"></i>
         </a>
