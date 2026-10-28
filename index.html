@@ -46,7 +46,7 @@
             box-shadow: 0 20px 40px -15px rgba(0,0,0,0.07);
         }
         
-        /* Active Variant Styling (Clear Selection) */
+        /* Active Variant Styling */
         .variant-btn {
             border: 2px solid #E5E0D8;
             transition: all 0.2s ease-in-out;
@@ -114,7 +114,7 @@
                     <img id="main-product-img" src="bag-black.jpg.jpeg" alt="Si Unique Handbag" class="w-full h-[380px] sm:h-[480px] object-cover rounded-2xl transition-all duration-300">
                 </div>
 
-                <!-- Color / Variant Options with Clear Selected State -->
+                <!-- Color / Variant Options -->
                 <div>
                     <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">কালার বা ভ্যারিয়েন্ট সিলেক্ট করুন:</label>
                     <div class="grid grid-cols-3 gap-3">
@@ -155,16 +155,18 @@
                     আপনার দৈনন্দিন স্টাইল এবং আভিজাত্য বাড়াতে প্রিমিয়াম কোয়ালিটির এই হ্যান্ডব্যাগটি অনন্য। সুন্দর গোল্ডেন চেইন স্ট্র্যাপ ও প্রিমিয়াম ফিনিশিং সহ লং-লাস্টিং ডিউরেবিলিটি নিশ্চিত করে।
                 </p>
 
-                <!-- Quantity Selector -->
+                <!-- Quantity Selector for Current Active Variant -->
                 <div class="space-y-2 pt-1">
-                    <label class="block text-sm font-bold text-primary">পরিমাণ (Quantity):</label>
+                    <label class="block text-sm font-bold text-primary">
+                        <span id="current-variant-title" class="text-accent">Black Edition</span> এর পরিমাণ (Quantity):
+                    </label>
                     <div class="flex items-center gap-4">
                         <div class="flex items-center border border-bordercolor rounded-xl bg-white p-1 shadow-sm">
                             <button type="button" onclick="decreaseQty()" class="w-10 h-10 rounded-lg bg-softGray hover:bg-bordercolor text-primary font-bold text-lg transition flex items-center justify-center">-</button>
-                            <span id="qty-count" class="w-12 text-center font-bold text-lg text-primary">1</span>
+                            <span id="qty-count" class="w-12 text-center font-bold text-lg text-primary">0</span>
                             <button type="button" onclick="increaseQty()" class="w-10 h-10 rounded-lg bg-softGray hover:bg-bordercolor text-primary font-bold text-lg transition flex items-center justify-center">+</button>
                         </div>
-                        <span class="text-sm font-medium text-gray-600">সাবটোটাল: <strong id="subtotal-display" class="text-primary text-lg">৳৬৯০</strong></span>
+                        <span class="text-sm font-medium text-gray-600">সাবটোটাল: <strong id="subtotal-display" class="text-primary text-lg">৳০</strong></span>
                     </div>
                 </div>
 
@@ -288,13 +290,12 @@
                     <!-- Order Summary Box -->
                     <div class="bg-white p-6 rounded-2xl border border-bordercolor space-y-3 shadow-sm">
                         <h3 class="font-bold text-lg text-primary border-b pb-2">অর্ডার সামারি</h3>
-                        <div class="flex justify-between text-sm">
-                            <span class="text-gray-600">বাছাইকৃত ব্যাগ:</span>
-                            <span id="summary-variant" class="font-semibold text-primary">Black Edition</span>
+                        <div id="summary-items-list" class="space-y-1 text-sm text-gray-600">
+                            <!-- Selected items summary will render here dynamically -->
                         </div>
                         <div class="flex justify-between text-sm">
-                            <span class="text-gray-600">পণ্যের দাম (<span id="summary-qty">1</span>টি):</span>
-                            <span class="font-semibold text-gray-800" id="summary-product-total">৳৬৯০</span>
+                            <span class="text-gray-600">পণ্যের মোট দাম:</span>
+                            <span class="font-semibold text-gray-800" id="summary-product-total">৳০</span>
                         </div>
                         <div class="flex justify-between text-sm">
                             <span class="text-gray-600">ডেলিভারি চার্জ:</span>
@@ -302,12 +303,12 @@
                         </div>
                         <div class="flex justify-between text-base font-bold text-primary border-t pt-2">
                             <span>সর্বমোট:</span>
-                            <span id="total-price-display" class="text-xl text-primary">৳৬৯০</span>
+                            <span id="total-price-display" class="text-xl text-primary">৳০</span>
                         </div>
                     </div>
 
                     <button type="submit" class="w-full bg-primary hover:bg-accent text-white font-bold py-4 rounded-xl shadow-lg transition duration-200 text-lg flex items-center justify-center gap-2">
-                        <i class="fas fa-check-circle"></i> অর্ডার কনফার্ম করুন (৳<span id="btn-total">৬৯০</span>)
+                        <i class="fas fa-check-circle"></i> অর্ডার কনফার্ম করুন (৳<span id="btn-total">০</span>)
                     </button>
 
                 </form>
@@ -346,7 +347,7 @@
         <i class="fab fa-whatsapp text-2xl md:text-3xl"></i>
     </a>
 
-    <!-- Floating Add to Cart Button (হোয়াটসঅ্যাপ লোগোর ঠিক উপরে ফিক্সড থাকবে) -->
+    <!-- Floating Add to Cart Button (হোয়াটসঅ্যাপ লোগোর ঠিক উপরে) -->
     <button type="button" onclick="openCartDrawer()" class="fixed bottom-20 right-4 md:bottom-22 md:right-6 z-50 bg-accent hover:bg-primary text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 cursor-pointer">
         <i class="fas fa-cart-plus text-xl md:text-2xl"></i>
         <span id="floating-cart-badge" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden border border-white">0</span>
@@ -368,17 +369,22 @@
     <!-- JavaScript Logic -->
     <script>
         const unitPrice = 690;
-        let quantity = 1;
-        let deliveryCharge = 0;
         let selectedVariant = "Black Edition";
-        let cart = [];
+        let deliveryCharge = 0;
+
+        // Maintain independent quantities for each color variant
+        const variantQuantities = {
+            "Black Edition": 0,
+            "Brown Edition": 0,
+            "Golden Edition": 0
+        };
 
         function selectProductVariant(variantName, imgSrc, buttonId) {
             selectedVariant = variantName;
             
-            // Update Main Image
+            // Update Main Image & Active Title
             document.getElementById('main-product-img').src = imgSrc;
-            document.getElementById('summary-variant').innerText = variantName;
+            document.getElementById('current-variant-title').innerText = variantName;
 
             // Highlight Active Variant Button Visuals
             document.querySelectorAll('.variant-btn').forEach(btn => {
@@ -387,28 +393,48 @@
             if (buttonId) {
                 document.getElementById(buttonId).classList.add('active-variant');
             }
+
+            // Update UI for current variant quantity
+            updateCalculations();
         }
 
         function increaseQty() {
-            quantity++;
+            variantQuantities[selectedVariant]++;
             updateCalculations();
         }
 
         function decreaseQty() {
-            if (quantity > 1) {
-                quantity--;
+            if (variantQuantities[selectedVariant] > 0) {
+                variantQuantities[selectedVariant]--;
                 updateCalculations();
             }
         }
 
         function updateCalculations() {
-            document.getElementById('qty-count').innerText = quantity;
-            document.getElementById('summary-qty').innerText = quantity;
-            
-            const productTotal = unitPrice * quantity;
-            document.getElementById('subtotal-display').innerText = '৳' + productTotal;
-            document.getElementById('summary-product-total').innerText = '৳' + productTotal;
+            const currentQty = variantQuantities[selectedVariant];
+            document.getElementById('qty-count').innerText = currentQty;
+            document.getElementById('subtotal-display').innerText = '৳' + (currentQty * unitPrice);
 
+            // Calculate overall total from all selected variants
+            let totalProductPrice = 0;
+            let summaryHTML = '';
+
+            for (const [variant, qty] of Object.entries(variantQuantities)) {
+                if (qty > 0) {
+                    const price = qty * unitPrice;
+                    totalProductPrice += price;
+                    summaryHTML += `<div class="flex justify-between font-medium"><span>• ${variant} (${qty}টি):</span><span class="text-primary font-bold">৳${price}</span></div>`;
+                }
+            }
+
+            if (summaryHTML === '') {
+                summaryHTML = '<span class="text-gray-400 italic">কোন ব্যাগ সিলেক্ট করা হয়নি (+ বাটনে ক্লিক করুন)</span>';
+            }
+
+            document.getElementById('summary-items-list').innerHTML = summaryHTML;
+            document.getElementById('summary-product-total').innerText = '৳' + totalProductPrice;
+
+            // Delivery Charge calculation
             const citySelect = document.getElementById('cust-city').value;
             const deliveryDisplay = document.getElementById('delivery-charge-display');
 
@@ -423,70 +449,75 @@
                 deliveryDisplay.innerText = "৳১৩০ (ঢাকার বাইরে)";
             }
 
-            const grandTotal = productTotal + deliveryCharge;
+            const grandTotal = totalProductPrice > 0 ? (totalProductPrice + deliveryCharge) : 0;
             document.getElementById('total-price-display').innerText = '৳' + grandTotal;
             document.getElementById('btn-total').innerText = grandTotal;
+
+            // Update Header & Floating Badges
+            updateCartBadges();
         }
 
         function addToCartAction() {
-            const existingItem = cart.find(item => item.name === selectedVariant);
-            if (existingItem) {
-                existingItem.qty += quantity;
-            } else {
-                cart.push({ name: selectedVariant, qty: quantity });
+            if (variantQuantities[selectedVariant] === 0) {
+                variantQuantities[selectedVariant] = 1; // Auto set to 1 if added directly
+                updateCalculations();
             }
-            updateCartUI();
-            document.getElementById('cart-modal').classList.remove('hidden');
+            openCartDrawer();
         }
 
-        function updateCartQty(index, change) {
-            cart[index].qty += change;
-            if (cart[index].qty <= 0) {
-                cart.splice(index, 1);
+        function updateCartBadges() {
+            let totalItems = 0;
+            for (const qty of Object.values(variantQuantities)) {
+                totalItems += qty;
             }
-            updateCartUI();
-        }
 
-        function updateCartUI() {
-            const container = document.getElementById('cart-items-container');
             const badge = document.getElementById('cart-badge');
             const floatingBadge = document.getElementById('floating-cart-badge');
-            
-            let totalItems = 0;
-            let totalPrice = 0;
-            container.innerHTML = '';
+            const container = document.getElementById('cart-items-container');
 
-            if (cart.length === 0) {
-                container.innerHTML = '<p class="text-center text-gray-500 text-sm py-4">আপনার কার্টটি খালি রয়েছে</p>';
+            if (totalItems === 0) {
                 badge.classList.add('hidden');
                 floatingBadge.classList.add('hidden');
+                container.innerHTML = '<p class="text-center text-gray-500 text-sm py-4">আপনার কার্টটি খালি রয়েছে</p>';
+                document.getElementById('cart-modal-total').innerText = '৳০';
             } else {
                 badge.classList.remove('hidden');
                 floatingBadge.classList.remove('hidden');
-                cart.forEach((item, index) => {
-                    totalItems += item.qty;
-                    const itemTotal = item.qty * unitPrice;
-                    totalPrice += itemTotal;
+                badge.innerText = totalItems;
+                floatingBadge.innerText = totalItems;
 
-                    container.innerHTML += `
-                        <div class="flex items-center justify-between bg-softGray p-3 rounded-xl">
-                            <div>
-                                <p class="font-bold text-sm text-primary">${item.name}</p>
-                                <p class="text-xs text-gray-600">৳${unitPrice} × ${item.qty} = ৳${itemTotal}</p>
+                let cartHTML = '';
+                let totalPrice = 0;
+
+                for (const [variant, qty] of Object.entries(variantQuantities)) {
+                    if (qty > 0) {
+                        const itemTotal = qty * unitPrice;
+                        totalPrice += itemTotal;
+                        cartHTML += `
+                            <div class="flex items-center justify-between bg-softGray p-3 rounded-xl">
+                                <div>
+                                    <p class="font-bold text-sm text-primary">${variant}</p>
+                                    <p class="text-xs text-gray-600">৳${unitPrice} × ${qty} = ৳${itemTotal}</p>
+                                </div>
+                                <div class="flex items-center gap-2 bg-white border border-bordercolor rounded-lg px-2 py-1 shadow-sm">
+                                    <button type="button" onclick="changeVariantQty('${variant}', -1)" class="text-gray-500 hover:text-primary font-bold px-1.5">-</button>
+                                    <span class="text-xs font-bold">${qty}</span>
+                                    <button type="button" onclick="changeVariantQty('${variant}', 1)" class="text-gray-500 hover:text-primary font-bold px-1.5">+</button>
+                                </div>
                             </div>
-                            <div class="flex items-center gap-2 bg-white border border-bordercolor rounded-lg px-2 py-1 shadow-sm">
-                                <button type="button" onclick="updateCartQty(${index}, -1)" class="text-gray-500 hover:text-primary font-bold px-1.5">-</button>
-                                <span class="text-xs font-bold">${item.qty}</span>
-                                <button type="button" onclick="updateCartQty(${index}, 1)" class="text-gray-500 hover:text-primary font-bold px-1.5">+</button>
-                            </div>
-                        </div>
-                    `;
-                });
+                        `;
+                    }
+                }
+                container.innerHTML = cartHTML;
+                document.getElementById('cart-modal-total').innerText = '৳' + totalPrice;
             }
+        }
 
-            badge.innerText = totalItems;
-            floatingBadge.innerText = totalItems;
-            document.getElementById('cart-modal-total').innerText = '৳' + totalPrice;
+        function changeVariantQty(variantName, change) {
+            if (variantQuantities[variantName] + change >= 0) {
+                variantQuantities[variantName] += change;
+                updateCalculations();
+            }
         }
 
         function openCartDrawer() {
@@ -505,8 +536,19 @@
         function handleOrderSubmit(event) {
             event.preventDefault();
             
-            if (cart.length === 0) {
-                alert('দয়া করে প্রথমে কার্টে প্রোডাক্ট যোগ করুন!');
+            let totalProductsPrice = 0;
+            let cartSummary = '';
+
+            for (const [variant, qty] of Object.entries(variantQuantities)) {
+                if (qty > 0) {
+                    const sub = qty * unitPrice;
+                    totalProductsPrice += sub;
+                    cartSummary += `• ${variant} - ${qty} টি (৳${sub})\n`;
+                }
+            }
+
+            if (totalProductsPrice === 0) {
+                alert('দয়া করে অন্তত ১টি ব্যাগ সিলেক্ট করুন (+ বাটনে ক্লিক করে পরিমাণ বাড়ান)!');
                 return;
             }
 
@@ -522,14 +564,6 @@
             } else {
                 phoneError.classList.add('hidden');
             }
-
-            let cartSummary = '';
-            let totalProductsPrice = 0;
-            cart.forEach(item => {
-                const sub = item.qty * unitPrice;
-                totalProductsPrice += sub;
-                cartSummary += `• ${item.name} - ${item.qty} টি (৳${sub})\n`;
-            });
 
             const grandTotal = totalProductsPrice + deliveryCharge;
 
