@@ -162,9 +162,9 @@
                     </label>
                     <div class="flex items-center gap-4">
                         <div class="flex items-center border border-bordercolor rounded-xl bg-white p-1 shadow-sm">
-                            <button type="button" onclick="decreaseQty()" class="w-10 h-10 rounded-lg bg-softGray hover:bg-bordercolor text-primary font-bold text-lg transition flex items-center justify-center">-</button>
+                            <button type="button" onclick="changeCurrentQty(-1)" class="w-10 h-10 rounded-lg bg-softGray hover:bg-bordercolor text-primary font-bold text-lg transition flex items-center justify-center">-</button>
                             <span id="qty-count" class="w-12 text-center font-bold text-lg text-primary">0</span>
-                            <button type="button" onclick="increaseQty()" class="w-10 h-10 rounded-lg bg-softGray hover:bg-bordercolor text-primary font-bold text-lg transition flex items-center justify-center">+</button>
+                            <button type="button" onclick="changeCurrentQty(1)" class="w-10 h-10 rounded-lg bg-softGray hover:bg-bordercolor text-primary font-bold text-lg transition flex items-center justify-center">+</button>
                         </div>
                         <span class="text-sm font-medium text-gray-600">সাবটোটাল: <strong id="subtotal-display" class="text-primary text-lg">৳০</strong></span>
                     </div>
@@ -342,12 +342,12 @@
         </div>
     </div>
 
-    <!-- Floating WhatsApp Button (ডানপাশে নিচে হোয়াটসঅ্যাপ লোগো - 01410796743) -->
+    <!-- Floating WhatsApp Button (01410796743) -->
     <a href="https://wa.me/8801410796743?text=Hi%20Si%20Unique!%20I%20want%20to%20order%20handbag." target="_blank" class="fixed bottom-6 right-4 md:bottom-6 md:right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
         <i class="fab fa-whatsapp text-2xl md:text-3xl"></i>
     </a>
 
-    <!-- Floating Add to Cart Button (হোয়াটসঅ্যাপ লোগোর ঠিক উপরে) -->
+    <!-- Floating Add to Cart Button -->
     <button type="button" onclick="openCartDrawer()" class="fixed bottom-20 right-4 md:bottom-22 md:right-6 z-50 bg-accent hover:bg-primary text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 cursor-pointer">
         <i class="fas fa-cart-plus text-xl md:text-2xl"></i>
         <span id="floating-cart-badge" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden border border-white">0</span>
@@ -372,7 +372,7 @@
         let selectedVariant = "Black Edition";
         let deliveryCharge = 0;
 
-        // Maintain independent quantities for each color variant
+        // Independent quantities for each color variant
         const variantQuantities = {
             "Black Edition": 0,
             "Brown Edition": 0,
@@ -394,28 +394,24 @@
                 document.getElementById(buttonId).classList.add('active-variant');
             }
 
-            // Update UI for current variant quantity
+            // Sync quantity counter display for newly selected variant
+            document.getElementById('qty-count').innerText = variantQuantities[selectedVariant];
+            document.getElementById('subtotal-display').innerText = '৳' + (variantQuantities[selectedVariant] * unitPrice);
+
             updateCalculations();
         }
 
-        function increaseQty() {
-            variantQuantities[selectedVariant]++;
-            updateCalculations();
-        }
-
-        function decreaseQty() {
-            if (variantQuantities[selectedVariant] > 0) {
-                variantQuantities[selectedVariant]--;
+        function changeCurrentQty(change) {
+            let currentQty = variantQuantities[selectedVariant] + change;
+            if (currentQty >= 0) {
+                variantQuantities[selectedVariant] = currentQty;
+                document.getElementById('qty-count').innerText = currentQty;
+                document.getElementById('subtotal-display').innerText = '৳' + (currentQty * unitPrice);
                 updateCalculations();
             }
         }
 
         function updateCalculations() {
-            const currentQty = variantQuantities[selectedVariant];
-            document.getElementById('qty-count').innerText = currentQty;
-            document.getElementById('subtotal-display').innerText = '৳' + (currentQty * unitPrice);
-
-            // Calculate overall total from all selected variants
             let totalProductPrice = 0;
             let summaryHTML = '';
 
@@ -453,13 +449,14 @@
             document.getElementById('total-price-display').innerText = '৳' + grandTotal;
             document.getElementById('btn-total').innerText = grandTotal;
 
-            // Update Header & Floating Badges
             updateCartBadges();
         }
 
         function addToCartAction() {
             if (variantQuantities[selectedVariant] === 0) {
-                variantQuantities[selectedVariant] = 1; // Auto set to 1 if added directly
+                variantQuantities[selectedVariant] = 1;
+                document.getElementById('qty-count').innerText = 1;
+                document.getElementById('subtotal-display').innerText = '৳' + unitPrice;
                 updateCalculations();
             }
             openCartDrawer();
@@ -516,6 +513,11 @@
         function changeVariantQty(variantName, change) {
             if (variantQuantities[variantName] + change >= 0) {
                 variantQuantities[variantName] += change;
+                // If currently active variant is modified, update main screen counter too
+                if (variantName === selectedVariant) {
+                    document.getElementById('qty-count').innerText = variantQuantities[selectedVariant];
+                    document.getElementById('subtotal-display').innerText = '৳' + (variantQuantities[selectedVariant] * unitPrice);
+                }
                 updateCalculations();
             }
         }
@@ -578,4 +580,9 @@
                             `*সর্বমোট প্রদেয়:* ৳${grandTotal}`;
 
             const encodedMsg = encodeURIComponent(message);
-            window
+            window.open(`https://wa.me/8801410796743?text=${encodedMsg}`, '_blank');
+            alert('ধন্যবাদ! আপনার অর্ডারটির তথ্য হোয়াটসঅ্যাপে পাঠানো হচ্ছে।');
+        }
+    </script>
+</body>
+</html>
