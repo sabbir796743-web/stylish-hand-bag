@@ -47,15 +47,6 @@
         .product-shadow {
             box-shadow: 0 25px 50px -12px rgba(197, 160, 89, 0.15);
         }
-        .luxury-card {
-            background: #FFFFFF;
-            border: 1px solid #E8E2D5;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .luxury-card:hover {
-            border-color: #C5A059;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
         
         /* Active Variant Styling */
         .variant-btn {
@@ -66,7 +57,7 @@
         .variant-btn.active-variant {
             border: 2px solid #C5A059 !important;
             background-color: #FFFDF9 !important;
-            box-shadow: 0 8px 20px rgba(197, 160, 89, 0.2);
+            box-shadow: 0 8px 20px rgba(197, 160, 89, 0.25);
             transform: translateY(-2px);
         }
         .variant-btn.active-variant::after {
@@ -87,10 +78,9 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.15);
         }
 
-        /* Pulse Glow Effect for Buttons */
         @keyframes softPulse {
             0% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(197, 160, 89, 0); }
+            70% { box-shadow: 0 0 0 12px rgba(197, 160, 89, 0); }
             100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
         }
         .pulse-btn {
@@ -316,7 +306,7 @@
                             <i class="fas fa-file-invoice text-accent"></i> অর্ডার সামারি
                         </h3>
                         <div id="summary-items-list" class="space-y-1.5 text-sm text-gray-600">
-                            <!-- Selected items summary will render here -->
+                            <!-- Selected items summary -->
                         </div>
                         <div class="flex justify-between text-sm">
                             <span class="text-gray-600">পণ্যের মোট দাম:</span>
@@ -343,7 +333,7 @@
 
     <!-- Cart Modal / Drawer -->
     <div id="cart-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-md rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5 animate-scaleUp border border-bordercolor">
+        <div class="bg-white w-full max-w-md rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5 border border-bordercolor">
             <div class="flex items-center justify-between border-b pb-4">
                 <h3 class="font-bold text-xl text-primary flex items-center gap-2">
                     <i class="fas fa-shopping-bag text-accent"></i> আপনার শপিং কার্ট
@@ -372,7 +362,7 @@
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
-    <!-- Floating Add to Cart Button -->
+    <!-- Floating Add to Cart Button (WhatsApp er upore thakbe) -->
     <button type="button" onclick="openCartDrawer()" class="fixed bottom-21 right-4 md:bottom-23 md:right-6 z-50 bg-accent hover:bg-accentHover text-white w-13 h-13 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 cursor-pointer">
         <i class="fas fa-cart-plus text-xl md:text-2xl"></i>
         <span id="floating-cart-badge" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden border-2 border-white">0</span>
@@ -569,7 +559,7 @@
             }
 
             if (totalProductsPrice === 0) {
-                alert('দয়া করে অন্তত ১টি ব্যাগ সিলেক্ট করুন (+ বাটনে ক্লিক করে পরিমাণ বাড়ان)!');
+                alert('দয়া করে অন্তত ১টি ব্যাগ সিলেক্ট করুন (+ বাটনে ক্লিক করে পরিমাণ বাড়ান)!');
                 return;
             }
 
