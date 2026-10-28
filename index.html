@@ -357,16 +357,19 @@
         </div>
     </div>
 
-    <!-- Floating WhatsApp Button (01410796743) -->
-    <a href="https://wa.me/8801410796743?text=Hi%20Si%20Unique!%20I%20want%20to%20order%20handbag." target="_blank" class="fixed bottom-6 right-4 md:bottom-6 md:right-6 z-50 bg-[#25D366] hover:bg-[#20ba5a] text-white w-13 h-13 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
-        <i class="fab fa-whatsapp text-3xl"></i>
-    </a>
+    <!-- Floating WhatsApp Button & Add to Cart Button Container (Ensures proper stacking above WhatsApp) -->
+    <div class="fixed bottom-6 right-4 md:bottom-6 md:right-6 z-50 flex flex-col gap-3 items-center">
+        <!-- Floating Add to Cart Button (WhatsApp er thik opore fixed thakbe) -->
+        <button type="button" onclick="openCartDrawer()" class="bg-accent hover:bg-accentHover text-white w-13 h-13 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 cursor-pointer relative">
+            <i class="fas fa-shopping-cart text-xl md:text-2xl"></i>
+            <span id="floating-cart-badge" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden border-2 border-white">0</span>
+        </button>
 
-    <!-- Floating Add to Cart Button (WhatsApp er thik opore fixed thakbe) -->
-    <button type="button" onclick="openCartDrawer()" class="fixed bottom-22 right-4 md:bottom-23 md:right-6 z-50 bg-accent hover:bg-accentHover text-white w-13 h-13 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 cursor-pointer">
-        <i class="fas fa-shopping-cart text-xl md:text-2xl"></i>
-        <span id="floating-cart-badge" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden border-2 border-white">0</span>
-    </button>
+        <!-- Floating WhatsApp Button (01410796743) -->
+        <a href="https://wa.me/8801410796743?text=Hi%20Si%20Unique!%20I%20want%20to%20order%20handbag." target="_blank" class="bg-[#25D366] hover:bg-[#20ba5a] text-white w-13 h-13 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
+            <i class="fab fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-primary text-white py-12 px-4 border-t border-gray-800">
