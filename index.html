@@ -45,9 +45,38 @@
         .product-shadow {
             box-shadow: 0 20px 40px -15px rgba(0,0,0,0.07);
         }
+        
+        /* Active Variant Styling */
+        .variant-btn {
+            border: 2px solid #E5E0D8;
+            transition: all 0.2s ease-in-out;
+            position: relative;
+        }
+        .variant-btn.active-variant {
+            border: 3px solid #D4AF37 !important;
+            background-color: #FFFDF9 !important;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+            transform: scale(1.02);
+        }
+        .variant-btn.active-variant::after {
+            content: '✓';
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            background: #D4AF37;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
-<body class="pb-20 md:pb-0">
+<body class="pb-28 md:pb-24">
 
     <!-- Header Navigation -->
     <header class="sticky top-0 z-40 glass-nav border-b border-bordercolor transition-all">
@@ -76,7 +105,7 @@
     <section class="py-10 md:py-16 px-4 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
-            <!-- Product Showcase with Robust Image Handling -->
+            <!-- Product Showcase -->
             <div class="space-y-4">
                 <div class="relative overflow-hidden rounded-3xl bg-white p-3 border border-bordercolor product-shadow">
                     <span class="absolute top-6 left-6 z-10 bg-accent text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">
@@ -85,20 +114,23 @@
                     <img id="main-product-img" src="bag-black.jpg.jpeg" alt="Si Unique Handbag" class="w-full h-[380px] sm:h-[480px] object-cover rounded-2xl transition-all duration-300">
                 </div>
 
-                <!-- Thumbnails / Variants with Images & Names -->
-                <div class="grid grid-cols-3 gap-3">
-                    <button type="button" onclick="selectProductVariant('Black Edition', 'bag-black.jpg.jpeg')" class="border-2 border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
-                        <img src="bag-black.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
-                        <p class="text-xs font-bold text-center mt-1.5 text-primary">Black Edition</p>
-                    </button>
-                    <button type="button" onclick="selectProductVariant('Brown Edition', 'bag-brown.jpg.jpeg')" class="border border-bordercolor hover:border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
-                        <img src="bag-brown.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
-                        <p class="text-xs font-bold text-center mt-1.5 text-primary">Brown Edition</p>
-                    </button>
-                    <button type="button" onclick="selectProductVariant('Golden Edition', 'bag-golden.jpg.jpeg')" class="border border-bordercolor hover:border-accent rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition hover:opacity-90 text-left shadow-sm">
-                        <img src="bag-golden.jpg.jpeg" class="h-24 w-full object-cover rounded-lg">
-                        <p class="text-xs font-bold text-center mt-1.5 text-primary">Golden Edition</p>
-                    </button>
+                <!-- Color / Variant Options with Clear Selected State -->
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">কালার বা ভ্যারিয়েন্ট সিলেক্ট করুন:</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <button type="button" id="btn-black" onclick="selectProductVariant('Black Edition', 'bag-black.jpg.jpeg', 'btn-black')" class="variant-btn active-variant rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition text-left shadow-sm">
+                            <img src="bag-black.jpg.jpeg" class="h-20 sm:h-24 w-full object-cover rounded-lg">
+                            <p class="text-xs font-bold text-center mt-1.5 text-primary">Black Edition</p>
+                        </button>
+                        <button type="button" id="btn-brown" onclick="selectProductVariant('Brown Edition', 'bag-brown.jpg.jpeg', 'btn-brown')" class="variant-btn rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition text-left shadow-sm">
+                            <img src="bag-brown.jpg.jpeg" class="h-20 sm:h-24 w-full object-cover rounded-lg">
+                            <p class="text-xs font-bold text-center mt-1.5 text-primary">Brown Edition</p>
+                        </button>
+                        <button type="button" id="btn-golden" onclick="selectProductVariant('Golden Edition', 'bag-golden.jpg.jpeg', 'btn-golden')" class="variant-btn rounded-xl overflow-hidden p-1.5 bg-white focus:outline-none transition text-left shadow-sm">
+                            <img src="bag-golden.jpg.jpeg" class="h-20 sm:h-24 w-full object-cover rounded-lg">
+                            <p class="text-xs font-bold text-center mt-1.5 text-primary">Golden Edition</p>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -116,11 +148,11 @@
                 <div class="flex items-baseline gap-4 bg-white p-4 rounded-2xl border border-bordercolor inline-block shadow-sm">
                     <span class="text-3xl sm:text-4xl font-extrabold text-primary">৳৬৯০</span>
                     <span class="text-xl text-gray-400 line-through">৳৯৯৯</span>
-                    <span class="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-md">৩০% ছাড়[cite: 7]</span>
+                    <span class="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-md">৩০% ছাড়</span>
                 </div>
 
                 <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
-                    আপনার দৈনন্দিন স্টাইল এবং আভিজাত্য বাড়াতে প্রিমিয়াম কোয়ালিটির এই হ্যান্ডব্যাগটি অনন্য। সুন্দর গোল্ডেন চেইন স্ট্র্যাপ ও প্রিমিয়াম ফিনিশিং সহ লং-লাস্টিং ডিউরেবিলিটি নিশ্চিত করে[cite: 7, 8, 9]।
+                    আপনার দৈনন্দিন স্টাইল এবং আভিজাত্য বাড়াতে প্রিমিয়াম কোয়ালিটির এই হ্যান্ডব্যাগটি অনন্য। সুন্দর গোল্ডেন চেইন স্ট্র্যাপ ও প্রিমিয়াম ফিনিশিং সহ লং-লাস্টিং ডিউরেবিলিটি নিশ্চিত করে।
                 </p>
 
                 <!-- Quantity Selector -->
@@ -136,7 +168,7 @@
                     </div>
                 </div>
 
-                <!-- Action Buttons: Order Now & Add to Cart -->
+                <!-- Main Section Action Buttons -->
                 <div class="pt-2 flex flex-col sm:flex-row gap-3">
                     <a href="#order-section" class="flex-1 bg-primary text-white text-center py-4 rounded-xl font-bold hover:bg-accent transition shadow-lg flex items-center justify-center gap-2 text-base">
                         <i class="fas fa-shopping-bag"></i> এখনই অর্ডার করুন
@@ -155,7 +187,7 @@
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-10">
                 <h2 class="hero-title text-3xl md:text-4xl font-bold text-primary">অর্ডার করতে নিচের ফর্মটি পূরণ করুন</h2>
-                <p class="text-gray-500 text-sm mt-2">কোন অগ্রিম টাকা লাগবে না, পণ্য হাতে পেয়ে চেক করে মূল্য পরিশোধ করবেন।</p>
+                <p class="text-gray-500 text-sm mt-2">কোন অগ্রিম টাকা লাগবে না, পণ্য হাতে পেয়ে চেক করে মূল্য পরিশোধ করবেন।</p>
             </div>
 
             <div class="bg-offwhite p-6 sm:p-10 rounded-3xl border border-bordercolor shadow-sm">
@@ -170,81 +202,81 @@
                         <div>
                             <label class="block text-sm font-semibold text-gray-700 mb-2">মোবাইল নম্বর (সঠিক ১১ ডিজিট) *</label>
                             <input type="tel" id="cust-phone" required pattern="[0-9]{11,}" placeholder="01XXXXXXXXX" class="w-full px-4 py-3 rounded-xl border border-bordercolor focus:outline-none focus:ring-2 focus:ring-accent bg-white">
-                            <span id="phone-error" class="text-xs text-red-500 hidden mt-1">দয়া করে অন্তত ১১ ডিজিটের সঠিক মোবাইল নম্বর দিন</span>
+                            <span id="phone-error" class="text-xs text-red-500 hidden mt-1">দয়া করে অন্তত ১১ ডিজিটের সঠিক মোবাইল নম্বর দিন</span>
                         </div>
                     </div>
 
-                    <!-- City Selection with Auto Delivery Charge -->
+                    <!-- City Selection -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-semibold text-gray-700 mb-2">জেলা / City সিলেক্ট করুন *</label>
                             <select id="cust-city" required onchange="updateCalculations()" class="w-full px-4 py-3 rounded-xl border border-bordercolor focus:outline-none focus:ring-2 focus:ring-accent bg-white">
                                 <option value="">আপনার জেলা সিলেক্ট করুন</option>
-                                <option value="Dhaka">Dhaka (ঢাকার মধ্যে - ৳৭০)[cite: 7]</option>
-                                <option value="Outside Dhaka">Dhaka-r Bahire (ঢাকার বাইরে - ৳১৩০)[cite: 7]</option>
-                                <option value="Bagerhat">Bagerhat (বাগেরহাট - ৳১৩০)[cite: 7]</option>
-                                <option value="Bandarban">Bandarban (বান্দরবান - ৳১৩০)[cite: 7]</option>
-                                <option value="Barguna">Barguna (বরগুনা - ৳১৩০)[cite: 7]</option>
-                                <option value="Barishal">Barishal (বরিশাল - ৳১৩০)[cite: 7]</option>
-                                <option value="Bhola">Bhola (ভোলা - ৳১৩০)[cite: 7]</option>
-                                <option value="Bogra">Bogra (বগুড়া - ৳১৩০)[cite: 7]</option>
-                                <option value="Brahmanbaria">Brahmanbaria (ব্রাহ্মণবাড়িয়া - ৳১৩০)[cite: 7]</option>
-                                <option value="Chandpur">Chandpur (চাঁদপুর - ৳১৩০)[cite: 7]</option>
-                                <option value="Chattogram">Chattogram (চট্টগ্রাম - ৳১৩০)[cite: 7]</option>
-                                <option value="Chuadanga">Chuadanga (চুয়াডাঙ্গা - ৳১৩০)[cite: 7]</option>
-                                <option value="Cumilla">Cumilla (কুমিল্লা - ৳১৩০)[cite: 7]</option>
-                                <option value="Coxs Bazar">Cox's Bazar (কক্সবাজার - ৳১৩০)[cite: 7]</option>
-                                <option value="Dinajpur">Dinajpur (দিনাজপুর - ৳১৩০)[cite: 7]</option>
-                                <option value="Faridpur">Faridpur (ফরিদপুর - ৳১৩০)[cite: 7]</option>
-                                <option value="Feni">Feni (ফেনী - ৳১৩০)[cite: 7]</option>
-                                <option value="Gaibandha">Gaibandha (গাইবান্ধা - ৳১৩০)[cite: 7]</option>
-                                <option value="Gazipur">Gazipur (গাজীপুর - ৳১৩০)[cite: 7]</option>
-                                <option value="Gopalganj">Gopalganj (গোপালগঞ্জ - ৳১৩০)[cite: 7]</option>
-                                <option value="Habiganj">Habiganj (হবিগঞ্জ - ৳১৩০)[cite: 7]</option>
-                                <option value="Jamalpur">Jamalpur (জামালপুর - ৳১৩০)[cite: 7]</option>
-                                <option value="Jashore">Jashore (যশোর - ৳১৩০)[cite: 7]</option>
-                                <option value="Jhalokati">Jhalokati (ঝালকাঠি - ৳১৩০)[cite: 7]</option>
-                                <option value="Jhenaidah">Jhenaidah (ঝিনাইদহ - ৳১৩০)[cite: 7]</option>
-                                <option value="Joypurhat">Joypurhat (জয়পুরহাট - ৳১৩০)[cite: 7]</option>
-                                <option value="Khagrachhari">Khagrachhari (খাগড়াছড়ি - ৳১৩০)[cite: 7]</option>
-                                <option value="Khulna">Khulna (খুলনা - ৳১৩০)[cite: 7]</option>
-                                <option value="Kishoreganj">Kishoreganj (কিশোরগঞ্জ - ৳১৩০)[cite: 7]</option>
-                                <option value="Kurigram">Kurigram (কুড়িগ্রাম - ৳১৩০)[cite: 7]</option>
-                                <option value="Kushtia">Kushtia (কুষ্টিয়া - ৳১৩০)[cite: 7]</option>
-                                <option value="Lakshmipur">Lakshmipur (লক্ষ্মীপুর - ৳১৩০)[cite: 7]</option>
-                                <option value="Lalmonirhat">Lalmonirhat (লালমনিরহাট - ৳১৩০)[cite: 7]</option>
-                                <option value="Madaripur">Madaripur (মাদারীপুর - ৳১৩০)[cite: 7]</option>
-                                <option value="Magura">Magura (মাগুরা - ৳১৩০)[cite: 7]</option>
-                                <option value="Manikganj">Manikganj (মানিকগঞ্জ - ৳১৩০)[cite: 7]</option>
-                                <option value="Meherpur">Meherpur (মেহেরপুর - ৳১৩০)[cite: 7]</option>
-                                <option value="Moulvibazar">Moulvibazar (মৌলভীবাজার - ৳১৩০)[cite: 7]</option>
-                                <option value="Munshiganj">Munshiganj (মুন্সীগঞ্জ - ৳১৩০)[cite: 7]</option>
-                                <option value="Mymensingh">Mymensingh (ময়মনসিংহ - ৳১৩০)[cite: 7]</option>
-                                <option value="Naogaon">Naogaon (নওগাঁ - ৳১৩০)[cite: 7]</option>
-                                <option value="Narail">Narail (নড়াইল - ৳১৩০)[cite: 7]</option>
-                                <option value="Narayanganj">Narayanganj (নারায়ণগঞ্জ - ৳১৩০)[cite: 7]</option>
-                                <option value="Narsingdi">Narsingdi (নরসিংদী - ৳১৩০)[cite: 7]</option>
-                                <option value="Natore">Natore (নাটোর - ৳১৩০)[cite: 7]</option>
-                                <option value="Nawabganj">Nawabganj (নবাবগঞ্জ - ৳১৩০)[cite: 7]</option>
-                                <option value="Netrokona">Netrokona (নেত্রকোণা - ৳১৩০)[cite: 7]</option>
-                                <option value="Nilphamari">Nilphamari (নীলফামারী - ৳১৩০)[cite: 7]</option>
-                                <option value="Noakhali">Noakhali (নোয়াখালী - ৳১৩০)[cite: 7]</option>
-                                <option value="Pabna">Pabna (পাবনা - ৳১৩০)[cite: 7]</option>
-                                <option value="Panchagarh">Panchagarh (পঞ্চগড় - ৳১৩০)[cite: 7]</option>
-                                <option value="Patuakhali">Patuakhali (পটুয়াখালী - ৳১৩০)[cite: 7]</option>
-                                <option value="Pirojpur">Pirojpur (পিরোজপুর - ৳১৩০)[cite: 7]</option>
-                                <option value="Rajbari">Rajbari (রাজবাড়ী - ৳১৩০)[cite: 7]</option>
-                                <option value="Rajshahi">Rajshahi (রাজশাহী - ৳১৩০)[cite: 7]</option>
-                                <option value="Rangamati">Rangamati (রাঙ্গামাটি - ৳১৩০)[cite: 7]</option>
-                                <option value="Rangpur">Rangpur (রংপুর - ৳১৩০)[cite: 7]</option>
-                                <option value="Satkhira">Satkhira (সাতক্ষীরা - ৳১৩০)[cite: 7]</option>
-                                <option value="Shariatpur">Shariatpur (শরীয়তপুর - ৳১৩০)[cite: 7]</option>
-                                <option value="Sherpur">Sherpur (শেরপুর - ৳১৩০)[cite: 7]</option>
-                                <option value="Sirajganj">Sirajganj (সিরাজগঞ্জ - ৳১৩০)[cite: 7]</option>
-                                <option value="Sunamganj">Sunamganj (সুনামগঞ্জ - ৳১৩০)[cite: 7]</option>
-                                <option value="Sylhet">Sylhet (সিলেট - ৳১৩০)[cite: 7]</option>
-                                <option value="Tangail">Tangail (টাঙ্গাইল - ৳১৩০)[cite: 7]</option>
-                                <option value="Thakurgaon">Thakurgaon (ঠাকুরগাঁও - ৳১৩০)[cite: 7]</option>
+                                <option value="Dhaka">Dhaka (ঢাকার মধ্যে - ৳৭০)</option>
+                                <option value="Outside Dhaka">Dhaka-r Bahire (ঢাকার বাইরে - ৳১৩০)</option>
+                                <option value="Bagerhat">Bagerhat (বাগেরহাট - ৳১৩০)</option>
+                                <option value="Bandarban">Bandarban (বান্দরবান - ৳১৩০)</option>
+                                <option value="Barguna">Barguna (বরগুনা - ৳১৩০)</option>
+                                <option value="Barishal">Barishal (বরিশাল - ৳১৩০)</option>
+                                <option value="Bhola">Bhola (ভোলা - ৳১৩০)</option>
+                                <option value="Bogra">Bogra (বগুড়া - ৳১৩০)</option>
+                                <option value="Brahmanbaria">Brahmanbaria (ব্রাহ্মণবাড়িয়া - ৳১৩০)</option>
+                                <option value="Chandpur">Chandpur (চাঁদপুর - ৳১৩০)</option>
+                                <option value="Chattogram">Chattogram (চট্টগ্রাম - ৳১৩০)</option>
+                                <option value="Chuadanga">Chuadanga (চুয়াডাঙ্গা - ৳১৩০)</option>
+                                <option value="Cumilla">Cumilla (কুমিল্লা - ৳১৩০)</option>
+                                <option value="Coxs Bazar">Cox's Bazar (কক্সবাজার - ৳১৩০)</option>
+                                <option value="Dinajpur">Dinajpur (দিনাজপুর - ৳১৩০)</option>
+                                <option value="Faridpur">Faridpur (ফরিদপুর - ৳১৩০)</option>
+                                <option value="Feni">Feni (ফেনী - ৳১৩০)</option>
+                                <option value="Gaibandha">Gaibandha (গাইবান্ধা - ৳১৩০)</option>
+                                <option value="Gazipur">Gazipur (গাজীপুর - ৳১৩০)</option>
+                                <option value="Gopalganj">Gopalganj (গোপালগঞ্জ - ৳১৩০)</option>
+                                <option value="Habiganj">Habiganj (হবিগঞ্জ - ৳১৩০)</option>
+                                <option value="Jamalpur">Jamalpur (জামালপুর - ৳১৩০)</option>
+                                <option value="Jashore">Jashore (যশোর - ৳১৩০)</option>
+                                <option value="Jhalokati">Jhalokati (ঝালকাঠি - ৳১৩০)</option>
+                                <option value="Jhenaidah">Jhenaidah (ঝিনাইদহ - ৳১৩০)</option>
+                                <option value="Joypurhat">Joypurhat (জয়পুরহাট - ৳১৩০)</option>
+                                <option value="Khagrachhari">Khagrachhari (খাগড়াছড়ি - ৳১৩০)</option>
+                                <option value="Khulna">Khulna (খুলনা - ৳১৩০)</option>
+                                <option value="Kishoreganj">Kishoreganj (কিশোরগঞ্জ - ৳১৩০)</option>
+                                <option value="Kurigram">Kurigram (কুড়িগ্রাম - ৳১৩০)</option>
+                                <option value="Kushtia">Kushtia (কুষ্টিয়া - ৳১৩০)</option>
+                                <option value="Lakshmipur">Lakshmipur (লক্ষ্মীপুর - ৳১৩০)</option>
+                                <option value="Lalmonirhat">Lalmonirhat (লালমনিরহাট - ৳১৩০)</option>
+                                <option value="Madaripur">Madaripur (মাদারীপুর - ৳১৩০)</option>
+                                <option value="Magura">Magura (মাগুরা - ৳১৩০)</option>
+                                <option value="Manikganj">Manikganj (মানিকগঞ্জ - ৳১৩০)</option>
+                                <option value="Meherpur">Meherpur (মেহেরপুর - ৳১৩০)</option>
+                                <option value="Moulvibazar">Moulvibazar (মৌলভীবাজার - ৳১৩০)</option>
+                                <option value="Munshiganj">Munshiganj (মুন্সীগঞ্জ - ৳১৩০)</option>
+                                <option value="Mymensingh">Mymensingh (ময়মনসিংহ - ৳১৩০)</option>
+                                <option value="Naogaon">Naogaon (নওগাঁ - ৳১৩০)</option>
+                                <option value="Narail">Narail (নড়াইল - ৳১৩০)</option>
+                                <option value="Narayanganj">Narayanganj (নারায়ণগঞ্জ - ৳১৩০)</option>
+                                <option value="Narsingdi">Narsingdi (নরসিংদী - ৳১৩০)</option>
+                                <option value="Natore">Natore (নাটোর - ৳১৩০)</option>
+                                <option value="Nawabganj">Nawabganj (নবাবগঞ্জ - ৳১৩০)</option>
+                                <option value="Netrokona">Netrokona (নেত্রকোণা - ৳১৩০)</option>
+                                <option value="Nilphamari">Nilphamari (নীলফামারী - ৳১৩০)</option>
+                                <option value="Noakhali">Noakhali (নোয়াখালী - ৳১৩০)</option>
+                                <option value="Pabna">Pabna (পাবনা - ৳১৩০)</option>
+                                <option value="Panchagarh">Panchagarh (পঞ্চগড় - ৳১৩০)</option>
+                                <option value="Patuakhali">Patuakhali (পটুয়াখালী - ৳১৩০)</option>
+                                <option value="Pirojpur">Pirojpur (পিরোজপুর - ৳১৩০)</option>
+                                <option value="Rajbari">Rajbari (রাজবাড়ী - ৳১৩০)</option>
+                                <option value="Rajshahi">Rajshahi (রাজশাহী - ৳১৩০)</option>
+                                <option value="Rangamati">Rangamati (রাঙ্গামাটি - ৳১৩০)</option>
+                                <option value="Rangpur">Rangpur (রংপুর - ৳১৩০)</option>
+                                <option value="Satkhira">Satkhira (সাতক্ষীরা - ৳১৩০)</option>
+                                <option value="Shariatpur">Shariatpur (শরীয়তপুর - ৳১৩০)</option>
+                                <option value="Sherpur">Sherpur (শেরপুর - ৳১৩০)</option>
+                                <option value="Sirajganj">Sirajganj (সিরাজগঞ্জ - ৳১৩০)</option>
+                                <option value="Sunamganj">Sunamganj (সুনামগঞ্জ - ৳১৩০)</option>
+                                <option value="Sylhet">Sylhet (সিলেট - ৳১৩০)</option>
+                                <option value="Tangail">Tangail (টাঙ্গাইল - ৳১৩০)</option>
+                                <option value="Thakurgaon">Thakurgaon (ঠাকুরগাঁও - ৳১৩০)</option>
                             </select>
                         </div>
                         <div>
@@ -285,7 +317,7 @@
 
     <!-- Cart Modal / Drawer -->
     <div id="cart-modal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-md rounded-3xl p-6 shadow-2xl space-y-4 animate-scaleUp">
+        <div class="bg-white w-full max-w-md rounded-3xl p-6 shadow-2xl space-y-4">
             <div class="flex items-center justify-between border-b pb-3">
                 <h3 class="font-bold text-lg text-primary flex items-center gap-2">
                     <i class="fas fa-shopping-cart text-accent"></i> আপনার শপিং কার্ট
@@ -295,7 +327,7 @@
                 </button>
             </div>
             <div id="cart-items-container" class="space-y-3 max-h-60 overflow-y-auto">
-                <!-- Cart items will show here dynamically -->
+                <!-- Dynamic Cart Items -->
             </div>
             <div class="border-t pt-3 space-y-2">
                 <div class="flex justify-between font-bold text-primary text-base">
@@ -309,19 +341,30 @@
         </div>
     </div>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/88019767413?text=Hi%20Si%20Unique!%20I%20want%20to%20order%20handbag." target="_blank" class="fixed bottom-20 md:bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
-        <i class="fab fa-whatsapp text-3xl"></i>
+    <!-- Floating WhatsApp Button (Positioned cleanly) -->
+    <a href="https://wa.me/88019767413?text=Hi%20Si%20Unique!%20I%20want%20to%20order%20handbag." target="_blank" class="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-40 bg-green-500 hover:bg-green-600 text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
+        <i class="fab fa-whatsapp text-2xl md:text-3xl"></i>
     </a>
 
-    <!-- Mobile Bottom Fixed Quick Order Bar -->
-    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-bordercolor p-3 z-40 md:hidden flex gap-3 shadow-lg">
-        <a href="https://wa.me/88019767413" target="_blank" class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center font-bold">
-            <i class="fab fa-whatsapp text-xl"></i>
-        </a>
-        <a href="#order-section" class="flex-1 bg-primary text-white text-center py-3 rounded-xl font-bold flex items-center justify-center gap-2">
-            অর্ডার করুন
-        </a>
+    <!-- Sticky Bottom Bar (Always Available on Scroll for Mobile & Desktop) -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-bordercolor p-3 z-50 shadow-[0_-5px_20px_rgba(0,0,0,0.1)]">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-2 md:gap-4">
+            <div class="hidden sm:flex items-center gap-3">
+                <img id="sticky-bar-img" src="bag-black.jpg.jpeg" class="w-10 h-10 object-cover rounded-lg border">
+                <div>
+                    <p id="sticky-bar-variant" class="text-xs font-bold text-primary">Black Edition</p>
+                    <p class="text-xs font-semibold text-accent">৳৬৯০</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 w-full sm:w-auto">
+                <button type="button" onclick="addToCartAction()" class="flex-1 sm:flex-none bg-white border-2 border-accent text-accent hover:bg-accent hover:text-white px-4 py-2.5 md:py-3 rounded-xl text-xs md:text-sm font-bold transition flex items-center justify-center gap-1.5 shadow-sm">
+                    <i class="fas fa-cart-plus"></i> Add To Cart
+                </button>
+                <a href="#order-section" class="flex-1 sm:flex-none bg-primary text-white px-6 py-2.5 md:py-3 rounded-xl text-xs md:text-sm font-bold hover:bg-accent transition flex items-center justify-center gap-1.5 shadow-md">
+                    <i class="fas fa-shopping-bag"></i> এখনই অর্ডার করুন
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -345,10 +388,26 @@
         let selectedVariant = "Black Edition";
         let cart = [];
 
-        function selectProductVariant(variantName, imgSrc) {
+        function selectProductVariant(variantName, imgSrc, buttonId) {
             selectedVariant = variantName;
+            
+            // Update Main Image
             document.getElementById('main-product-img').src = imgSrc;
             document.getElementById('summary-variant').innerText = variantName;
+            
+            // Update Sticky Bar Thumbnail & Text
+            const stickyImg = document.getElementById('sticky-bar-img');
+            const stickyText = document.getElementById('sticky-bar-variant');
+            if (stickyImg) stickyImg.src = imgSrc;
+            if (stickyText) stickyText.innerText = variantName;
+
+            // Highlight Active Variant Button Visuals
+            document.querySelectorAll('.variant-btn').forEach(btn => {
+                btn.classList.remove('active-variant');
+            });
+            if (buttonId) {
+                document.getElementById(buttonId).classList.add('active-variant');
+            }
         }
 
         function increaseQty() {
@@ -418,7 +477,7 @@
             container.innerHTML = '';
 
             if (cart.length === 0) {
-                container.innerHTML = '<p class="text-center text-gray-500 text-sm py-4">আপনার কার্টটি খালি রয়েছে</p>';
+                container.innerHTML = '<p class="text-center text-gray-500 text-sm py-4">আপনার কার্টটি খালি রয়েছে</p>';
                 badge.classList.add('hidden');
             } else {
                 badge.classList.remove('hidden');
@@ -464,7 +523,7 @@
             event.preventDefault();
             
             if (cart.length === 0) {
-                alert('দয়া করে প্রথমে কার্টে প্রোডাক্ট যোগ করুন!');
+                alert('দয়া করে প্রথমে কার্টে প্রোডাক্ট যোগ করুন!');
                 return;
             }
 
@@ -499,11 +558,11 @@
                             `*ঠিকানা:* ${address}\n\n` +
                             `*পণ্যের মোট মূল্য:* ৳${totalProductsPrice}\n` +
                             `*ডেলিভারি চার্জ:* ৳${deliveryCharge}\n` +
-                            `*সর্বমোট প্রদেয়:* ৳${grandTotal}`;
+                            `*সর্বমোট প্রদেয়:* ৳${grandTotal}`;
 
             const encodedMsg = encodeURIComponent(message);
             window.open(`https://wa.me/88019767413?text=${encodedMsg}`, '_blank');
-            alert('ধন্যবাদ! আপনার অর্ডারটির তথ্য হোয়াটসঅ্যাপে পাঠানো হচ্ছে।');
+            alert('ধন্যবাদ! আপনার অর্ডারটির তথ্য হোয়াটসঅ্যাপে পাঠানো হচ্ছে।');
         }
     </script>
 </body>
