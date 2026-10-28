@@ -46,7 +46,7 @@
             box-shadow: 0 20px 40px -15px rgba(0,0,0,0.07);
         }
         
-        /* Active Variant Styling */
+        /* Active Variant Styling (Clear Selection) */
         .variant-btn {
             border: 2px solid #E5E0D8;
             transition: all 0.2s ease-in-out;
@@ -241,7 +241,7 @@
                                 <option value="Khagrachhari">Khagrachhari (খাগড়াছড়ি - ৳১৩০)</option>
                                 <option value="Khulna">Khulna (খুলনা - ৳১৩০)</option>
                                 <option value="Kishoreganj">Kishoreganj (কিশোরগঞ্জ - ৳১৩০)</option>
-                                <option value="Kurigram">Kurigram (কুড়িগ্রাম - ৳১৩০)</option>
+                                <option button value="Kurigram">Kurigram (কুড়িগ্রাম - ৳১৩০)</option>
                                 <option value="Kushtia">Kushtia (কুষ্টিয়া - ৳১৩০)</option>
                                 <option value="Lakshmipur">Lakshmipur (লক্ষ্মীপুর - ৳১৩০)</option>
                                 <option value="Lalmonirhat">Lalmonirhat (লালমনিরহাট - ৳১৩০)</option>
@@ -341,13 +341,13 @@
         </div>
     </div>
 
-    <!-- Floating WhatsApp Button (Positioned cleanly) -->
-    <a href="https://wa.me/88019767413?text=Hi%20Si%20Unique!%20I%20want%20to%20order%20handbag." target="_blank" class="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-40 bg-green-500 hover:bg-green-600 text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
+    <!-- Floating WhatsApp Button (ডানপাশে নিচে হোয়াটসঅ্যাপ লোগো) -->
+    <a href="https://wa.me/88019767413?text=Hi%20Si%20Unique!%20I%20want%20to%20order%20handbag." target="_blank" class="fixed bottom-24 right-4 md:bottom-24 md:right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
         <i class="fab fa-whatsapp text-2xl md:text-3xl"></i>
     </a>
 
-    <!-- Sticky Bottom Bar (Always Available on Scroll for Mobile & Desktop) -->
-    <div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-bordercolor p-3 z-50 shadow-[0_-5px_20px_rgba(0,0,0,0.1)]">
+    <!-- Floating Add to Cart / Order Bar (হোয়াটসঅ্যাপ লোগোর ঠিক উপরে বা নিচে স্ক্রল করলে সবসময় এক জায়গায় থাকবে) -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-bordercolor p-3 z-40 shadow-[0_-5px_20px_rgba(0,0,0,0.1)]">
         <div class="max-w-7xl mx-auto flex items-center justify-between gap-2 md:gap-4">
             <div class="hidden sm:flex items-center gap-3">
                 <img id="sticky-bar-img" src="bag-black.jpg.jpeg" class="w-10 h-10 object-cover rounded-lg border">
