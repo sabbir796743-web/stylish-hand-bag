@@ -288,7 +288,7 @@
         <div class="bg-white w-full max-w-md rounded-3xl p-6 shadow-2xl space-y-4 animate-scaleUp">
             <div class="flex items-center justify-between border-b pb-3">
                 <h3 class="font-bold text-lg text-primary flex items-center gap-2">
-                    <i class="fas fa-shopping-cart text-accent"></i> আপনার শপিং কার্ট
+                    <i class="fas fa-shopping-cart text-accent"></i> আপনার শপিং কার트
                 </h3>
                 <button type="button" onclick="closeCartModal()" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center font-bold text-gray-600">
                     <i class="fas fa-times"></i>
@@ -343,7 +343,6 @@
         let quantity = 1;
         let deliveryCharge = 0;
         let selectedVariant = "Black Edition";
-        let cartCount = 0;
 
         function selectProductVariant(variantName, imgSrc) {
             selectedVariant = variantName;
@@ -391,9 +390,8 @@
         }
 
         function addToCartAction() {
-            cartCount += quantity;
             const badge = document.getElementById('cart-badge');
-            badge.innerText = cartCount;
+            badge.innerText = quantity;
             badge.classList.remove('hidden');
 
             const productTotal = unitPrice * quantity;
@@ -412,7 +410,7 @@
         }
 
         function openCartDrawer() {
-            if(cartCount > 0) {
+            if(quantity > 0) {
                 document.getElementById('cart-modal').classList.remove('hidden');
             } else {
                 alert('আপনার কার্টটি বর্তমানে খালি রয়েছে!');
